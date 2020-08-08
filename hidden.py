@@ -87,6 +87,10 @@ def main():
     html_out = pre + sermon_out + post
     with open('sermons.html', 'w') as file:
         file.write(html_out)
+    sermon_out = steganographify(sermon, hide, '<b><i>', '</i></b>')
+    html_out = pre + sermon_out + post
+    with open('sermons_bold.html', 'w') as file:
+        file.write(html_out)
 
 if __name__ == '__main__':
     main()
